@@ -1,0 +1,43 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, minmax(450px, auto));
+  a {
+    text-decoration: none;
+  }
+}
+
+.title {
+  font-size: 50px;
+  line-height: 1.3em;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 700;
+  color: #000;
+}
+
+.descr {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 21px;
+  line-height: 30px;
+  margin-bottom: 90px;
+}
+
+.wrapperSlider {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .wrapper {
+    display: none;
+  }
+  .wrapperSlider {
+    display: block;
+    padding: 40px 0;
+  }
+  .title {
+    font-size: 35px;
+  }
+}

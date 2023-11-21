@@ -1,0 +1,121 @@
+@import "@/assets/styles/variables.scss";
+
+.form {
+  form {
+    width: 720px;
+    label {
+      position: relative;
+    }
+  }
+  .input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 33px;
+    color: #000;
+    border-bottom: 1px solid #939fb7;
+    border-radius: 0;
+    padding: 10px 0 9px;
+    &::placeholder {
+      color: #000;
+    }
+    &:focus {
+      border-color: $activeTextColor;
+    }
+  }
+  .descr {
+    margin-top: 50px;
+    display: block;
+  }
+  textarea.input {
+    resize: none;
+    height: 53px;
+    overflow: hidden;
+    padding: 10px 70px 9px 0;
+  }
+  .btns {
+    margin-top: 30px;
+    text-align: center;
+    .btn {
+      display: block;
+      margin: 0 auto;
+      border: none;
+      cursor: pointer;
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 23px;
+      white-space: nowrap;
+      padding: 0.7rem 3.4rem 0.7rem 3.1rem;
+      border-radius: 50px;
+      color: #fff;
+      background-color: #000;
+      position: relative;
+      overflow: hidden;
+      -webkit-transition: -webkit-transform 0.4s
+        cubic-bezier(0.645, 0.045, 0.355, 1);
+      transition: -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+      transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+      transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1),
+        -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+      span {
+        display: inline-block;
+        will-change: transform;
+        -webkit-transform: translateX(-5px);
+        transform: translateX(-5px);
+        -webkit-transition: -webkit-transform 0.4s
+          cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition: -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1),
+          -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        top: calc(50% - 0.2rem);
+        right: 2.5rem;
+        border-radius: 50%;
+        background-color: #fff;
+        will-change: transform;
+        -webkit-transition: -webkit-transform 0.7s
+          cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition: -webkit-transform 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition: transform 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition: transform 0.7s cubic-bezier(0.645, 0.045, 0.355, 1),
+          -webkit-transform 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+      &:hover {
+        span {
+          -webkit-transform: translateX(0);
+          transform: translateX(0);
+        }
+        &::after {
+          -webkit-transform: translate3d(4.4rem, 0, 0) scale(0.2);
+          transform: translate3d(4.4rem, 0, 0) scale(0.2);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .form {
+    width: 100%;
+    form {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+    padding: 0 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+    padding: 0 15px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+    padding: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1441px) {
+  .container {
+    max-width: 1550px;
+  }
+}
+
+#testimonials .slick-slide {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 65px 60px;
+  width: 100%;
+  height: 300px;
+  div div {
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 40px;
+  }
+  &::before {
+    position: absolute;
+    content: url("/left.svg");
+    transform: scale(0.5);
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+  &::after {
+    position: absolute;
+    content: url("/right.svg");
+    transform: scale(0.5);
+    pointer-events: none;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+#testimonials .slick-track {
+  display: flex;
+  transition-delay: 0.5s;
+  .slick-active {
+    &::before {
+      opacity: 1;
+      transition: all 0.3s ease-in-out;
+      transition-delay: 0.5s;
+    }
+    &::after {
+      opacity: 1;
+      transition: all 0.3s ease-in-out;
+      transition-delay: 0.5s;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #testimonials .slick-slide {
+    padding: 30px 20px;
+    div div {
+      font-size: 16px;
+    }
+  }
+  #testimonials .slick-track {
+    &::before {
+      top: -20px;
+    }
+    .slick-active {
+      &::before {
+        top: -20px;
+      }
+    }
+  }
+}
+
+.slick-dots {
+  display: flex !important;
+  align-items: center;
+  height: 20px;
+  margin-left: 40px;
+
+  .slick-active {
+    transform: scale(2);
+  }
+}
+
+.slick-dots li {
+  display: inline-block;
+  background: #000;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50%;
+  margin-right: 12px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  font-size: 0;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0;
+}
+
+.slick-dots button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 0 !important;
+  line-height: 0px !important;
+  width: 0px !important;
+  height: 0px !important;
+  cursor: pointer;
+  &::before {
+    position: relative;
+    content: "";
+    width: 0px !important;
+    height: 0px !important;
+    font-size: 0 !important;
+    line-height: 0px !important;
+  }
+}
+
+.ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transition: -webkit-transform 400ms;
+  transition: -webkit-transform 400ms;
+  transition: transform 400ms;
+  transition: transform 400ms, -webkit-transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.hamRotate.active {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.hamRotate180.active {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.line {
+  fill: none;
+  -webkit-transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke: #000;
+  stroke-width: 5.5;
+  stroke-linecap: round;
+}
+.ham4 .top {
+  stroke-dasharray: 40 121;
+}
+.ham4 .bottom {
+  stroke-dasharray: 40 121;
+}
+.ham4.active .top {
+  stroke-dashoffset: -68px;
+}
+.ham4.active .bottom {
+  stroke-dashoffset: -68px;
+}
+nav svg {
+  position: relative;
+  z-index: 888;
+}
+
+.active svg path {
+  fill: #fff;
+}
+.active .line {
+  stroke: #fff !important;
+}
+
+#projects,
+#sliderWrap,
+#team {
+  .slick-slide {
+    height: 100%;
+    &::before,
+    &::after {
+      position: relative;
+      content: "";
+    }
+  }
+  .slick-dots {
+    justify-content: center;
+    li {
+      margin: 0 10px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  #testimonials {
+    .slick-dots {
+      justify-content: center;
+      li {
+        margin: 0 10px;
+      }
+    }
+  }
+}
