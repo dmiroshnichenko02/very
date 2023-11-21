@@ -27,7 +27,7 @@ export default async function Proj() {
 
   return (
     <>
-      <Project projects={projects}/>
+      {projects && <Project projects={projects}/>}
     </>
   );
 }

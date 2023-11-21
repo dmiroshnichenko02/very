@@ -18,7 +18,7 @@ export default async function ContactPage() {
 
   return (
     <>
-      <ContactUs title={data.title} acf={data.acf}/>
+      {data && <ContactUs title={data.title} acf={data.acf}/>}
     </>
   )
 }

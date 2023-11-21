@@ -33,21 +33,22 @@ async function fetchAllPostData() {
   return res.json();
 }
 
-export async function generateMetadata(
-  { params }: { params: { id: string } },
-): Promise<Metadata> {
-
-  const product = await fetch(`https://rcw108.com/wp-json/wp/v2/projects/${params.id}?acf_format=standard`).then((res) =>
-    res.json()
-  );
-  const meta = await product
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string };
+}): Promise<Metadata> {
+  const product = await fetch(
+    `https://rcw108.com/wp-json/wp/v2/projects/${params.id}?acf_format=standard`
+  ).then((res) => res.json());
+  const meta = await product;
 
   return {
     title: meta?.yoast_head_json?.title,
     description: meta?.yoast_head_json?.description,
     openGraph: {
-      images: meta?.yoast_head_json?.og_image[0].url
-    }
+      images: meta?.yoast_head_json?.og_image[0].url,
+    },
   };
 }
 
@@ -69,7 +70,7 @@ export default async function SingleProject({
 
   return (
     <>
-      <ProjectS project={data} nextProj={randomProject} />
+      {data && nextPost && <ProjectS project={data} nextProj={randomProject} />}
     </>
   );
 }

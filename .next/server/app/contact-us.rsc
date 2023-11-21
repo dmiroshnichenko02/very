@@ -1,6 +1,6 @@
 1:HL["/_next/static/media/c9a5bc6a7c948fb0-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-2:HL["/_next/static/css/e48a6c95079a8399.css","style",{"crossOrigin":""}]
-0:["v42SrhILyBFFt6EWMxCNH",[[["",{"children":["contact-us",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],"$L3",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/e48a6c95079a8399.css","precedence":"next","crossOrigin":""}]],"$L4"]]]]
+2:HL["/_next/static/css/2daede53551b848d.css","style",{"crossOrigin":""}]
+0:["ZAKuDJpJ3s9hSfTXGyHUA",[[["",{"children":["contact-us",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],"$L3",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/2daede53551b848d.css","precedence":"next","crossOrigin":""}]],"$L4"]]]]
 5:HL["/_next/static/css/b9438c444d677c9c.css","style",{"crossOrigin":""}]
 7:I[6954,[],""]
 8:I[7264,[],""]
@@ -10,5 +10,5 @@ b:I[8326,["326","static/chunks/326-1e9a94166e86c701.js","409","static/chunks/409
 9:null
 c:I[7855,["326","static/chunks/326-1e9a94166e86c701.js","409","static/chunks/409-6ded5e9f3791a741.js","746","static/chunks/app/contact-us/page-9ba7fa7351eb1d3f.js"],""]
 a:["$","section",null,{"className":"contactUs_contact__BgOnM","children":["$","div",null,{"className":"container","children":[["$","h2",null,{"className":"contactUs_title___NQS6","children":"Contact Us"}],["$","div",null,{"className":"contactUs_subTitle__FpulM","children":[["$","h4",null,{"children":"Have a project?"}],["$","h4",null,{"children":"Let's create together!"}]]}],["$","div",null,{"className":"contactUs_wrapper__Js6H1","children":[["$","div",null,{"className":"contactUs_contacts__SeRfm","children":[["$","h4",null,{"children":"CONTACT IN MAIL"}],["$","$Lb",null,{"href":"mailto:mail@rcw108.com","children":"mail@rcw108.com"}]]}],["$","$Lc",null,{}]]}]]}]}]
-d:I[69,["326","static/chunks/326-1e9a94166e86c701.js","185","static/chunks/app/layout-6618a699f99a9b49.js"],""]
+d:I[69,["326","static/chunks/326-1e9a94166e86c701.js","185","static/chunks/app/layout-9c377552f5789696.js"],""]
 6:["$","$Ld",null,{"menu":[{"id":2,"name":"main_menu","fields":[{"title":"Home","url":"https://rcw108.com/"},{"title":"Projects","url":"https://rcw108.com/projects/"},{"title":"Team","url":"/#team"},{"title":"Testimonials","url":"/#testimonials"},{"title":"Contact Us","url":"https://rcw108.com/contact-us/"}]}]}]
