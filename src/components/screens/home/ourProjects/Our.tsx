@@ -6,22 +6,24 @@ import SliderComponent from "./SliderComponent";
 import styles from "./ourProjects.module.scss";
 import { ProjectData } from "@/interfaces/project.interface";
 
-const Our: FC<PropsWithChildren<any>> = ({ projects, project, btnText, title, description, services, projectsShowed }) => {
-
-  const showedProjects = projectsShowed.map((projId: number) => {
-    const showed = project.find((item: ProjectData) => item.id === projId);
-    return showed;
-  });
-
+const Our: FC<PropsWithChildren<any>> = ({
+  showedProjects,
+  projectsId,
+  btnText,
+  title,
+  description,
+  services,
+}) => {
+  console.log(showedProjects);
   return (
     <>
-      {projects && (
+      {showedProjects && (
         <section className={styles.projects}>
-          <h2 className={styles.title}>{projects.title}</h2>
-          <p className={styles.descr}>{projects.description}</p>
+          <h2 className={styles.title}>{title}</h2>
+          <p className={styles.descr}>{description}</p>
           <div className={styles.wrapper}>
-            {projects.services &&
-              projects.services.map(
+            {services &&
+              services.map(
                 (item: { title: string; img: string }, index: number) => {
                   return (
                     <ServicesBlock

@@ -1,72 +1,45 @@
-import { IService } from "@/interfaces/home.interface";
-import Our from "./Our";
+import { FC } from "react";
+
+import styles from "./ourProjects.module.scss";
+
 import { ProjectData } from "@/interfaces/project.interface";
+import { IService } from "@/interfaces/home.interface";
+import ServicesBlock from "@/components/ui/servicesBlock/ServicesBlock";
+import ProjectBlock from "@/components/ui/projectBlock/ProjectBlock";
+import Our from "./Our";
+
+async function fetchData() {
+  const res = await fetch(
+    "http://rcw108.com/wp-json/wp/v2/projects?acf_format=standard",
+    {
+      next: { revalidate: 3600 },
+    }
+  );
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
 
 interface IShowed {
   projectsShowed: number[];
   title: string;
   description: string;
-  services: IService[];
-  btnText: string;
-  projects: number[];
-  project: any
+  services: IService[],
+  btnText: string
 }
 
-export default async function OurProjects({
-  title,
-  description,
-  services,
-  btnText,
-  projectsShowed,
-  projects,
-  project
-}: IShowed) {
+export default async function OurProjects({title, description, services, btnText, projectsShowed }: IShowed) {
+  const projects = await fetchData();
+
+  const showedProjects = projectsShowed.map((projId: number) => {
+    const showed = projects.find((item: ProjectData) => item.id === projId);
+    return showed;
+  });
+
   return (
-    <>
-      {project && (
-        <Our
-          title={title}
-          description={description}
-          services={services}
-          btnText={btnText}
-          projectsShowed={projectsShowed}
-          projects={projects}
-          project={project}
-        />
-      )}
-    </>
+    <Our title={title} description={description} services={services} btnText={btnText} showedProjects={showedProjects}/>
   );
-}
-
-export async function getStaticProps() {
-  try {
-    const res = await fetch(
-      "https://rcw108.com/wp-json/wp/v2/projects?acf_format=standard",
-      {
-        next: { revalidate: 3600 },
-      }
-    );
-
-    if (!res.ok) {
-      throw new Error("Failed to fetch data");
-    }
-
-    const project = await res.json();
-
-    return {
-      props: {
-        project,
-      },
-      revalidate: 3600, // обновление данных каждый час
-    };
-  } catch (error) {
-    console.error(error);
-
-    return {
-      props: {
-        project: null,
-      },
-      revalidate: 3600,
-    };
-  }
 }

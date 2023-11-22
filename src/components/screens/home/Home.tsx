@@ -53,7 +53,6 @@ const Home: FC<PropsWithChildren<HomeData>> = ({ acf }) => {
               description={acf.description_pro}
               services={acf.services}
               btnText={acf.text_circle_p.replace(/<br\s*\/?>/g, "")}
-              projects={acf.projects}
             />
             <WorkSection
               title={acf.title_hw}
