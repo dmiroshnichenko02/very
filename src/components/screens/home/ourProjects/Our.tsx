@@ -7,11 +7,11 @@ import styles from "./ourProjects.module.scss";
 import { ProjectData } from "@/interfaces/project.interface";
 
 const Our: FC<PropsWithChildren<any>> = ({ projects }) => {
-  const { title, description, services, btnText, projectsShowed } = projects;
+
 
   const showedProjects =
-    projectsShowed &&
-    projectsShowed.map((projId: number) => {
+    projects.projectsShowed &&
+    projects.projectsShowed.map((projId: number) => {
       const showed = projects.find((item: ProjectData) => item.id === projId);
       return showed;
     });
@@ -20,11 +20,11 @@ const Our: FC<PropsWithChildren<any>> = ({ projects }) => {
     <>
       {projects && (
         <section className={styles.projects}>
-          <h2 className={styles.title}>{title}</h2>
-          <p className={styles.descr}>{description}</p>
+          <h2 className={styles.title}>{projects.title}</h2>
+          <p className={styles.descr}>{projects.description}</p>
           <div className={styles.wrapper}>
-            {services &&
-              services.map(
+            {projects.services &&
+              projects.services.map(
                 (item: { title: string; img: string }, index: number) => {
                   return (
                     <ServicesBlock
@@ -61,7 +61,7 @@ const Our: FC<PropsWithChildren<any>> = ({ projects }) => {
           <SliderComponent showedProjects={showedProjects} />
           <div className={styles.btns}>
             <div className={styles.button}>
-              {btnText}
+              <span>{projects.btnText}</span>
               <svg
                 version="1.1"
                 className={styles.circleSvg1}
