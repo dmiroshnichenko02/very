@@ -22,7 +22,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <Home acf={acf}/>
+      {acf && (<Home acf={acf}/>)}
     </>
   )
 }
