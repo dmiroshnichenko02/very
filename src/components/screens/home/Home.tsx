@@ -25,7 +25,7 @@ const Preloader: FC = () => {
   return loading ? <div className={styles.preloader}>Loading...</div> : null;
 };
 
-const Home: FC<PropsWithChildren<HomeData>> = ({ acf }) => {
+const Home: FC<PropsWithChildren<HomeData | any>> = ({ acf, projects }) => {
   return (
     <>
       <Preloader />
@@ -49,6 +49,7 @@ const Home: FC<PropsWithChildren<HomeData>> = ({ acf }) => {
             />
             <OurProjects
               projectsShowed={acf.projects}
+              projects={projects}
               title={acf.title_p}
               description={acf.description_pro}
               services={acf.services}
