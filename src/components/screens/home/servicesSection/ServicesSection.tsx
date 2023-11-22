@@ -22,9 +22,9 @@ const ServicesSection: FC<PropsWithChildren<IServicesSection>> = ({headlessTitle
                 <h2 className={styles.secondTitle}>{title}</h2>
                 <p className={styles.subTitle}>{subTitle}</p>
                 <div className={styles.img}>
-                    <Image src={reactImage} alt={headlessTitle} width={"400"} height={"250"}/>
-                    <Image src={reactImageSecond} alt={headlessTitle} width={70} height={63}/>
-                    <Image src={reactImageThird} alt={headlessTitle} width={"370"} height={"370"}/>
+                    <Image src={reactImage} alt={headlessTitle} width={"400"} height={"250"} priority/>
+                    <Image src={reactImageSecond} alt={headlessTitle} width={70} height={63} priority/>
+                    <Image src={reactImageThird} alt={headlessTitle} width={"370"} height={"370"} priority/>
                 </div>
                 <div className={styles.btns}>
                     <div className={styles.btn}><Link href={btnLink}>{btnText}</Link></div>

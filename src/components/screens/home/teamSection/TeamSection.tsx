@@ -67,6 +67,7 @@ const TeamSection: FC<PropsWithChildren<ITeamSection>> = ({
                         alt={item.name}
                         width={"400"}
                         height={"390"}
+                        priority
                       />
                     </div>
                     <div className={styles.info}>

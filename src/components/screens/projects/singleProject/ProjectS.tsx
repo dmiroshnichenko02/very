@@ -47,6 +47,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
                     alt={project.title.rendered}
                     width={261}
                     height={57}
+                    loading="eager"
                   />
                 </div>
                 <div className={styles.hourWrap}>
@@ -81,6 +82,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
                       priority
                       height={57}
                       layout="responsive"
+                      loading="eager"
                     />
                   </div>
                 </div>
@@ -100,6 +102,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
                       width={300}
                       height={200}
                       layout="responsive"
+                      loading="eager"
                     />
                   </div>
                   <div className={styles.devDescr}>
@@ -133,6 +136,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
                             alt={item.alt}
                             width={300}
                             height={250}
+                            loading="eager"
                           />
                         </div>
                       );
@@ -229,6 +233,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
                       width={261}
                       height={57}
                       layout="responsive"
+                      loading="eager"
                     />
                   </div>
                 </div>
