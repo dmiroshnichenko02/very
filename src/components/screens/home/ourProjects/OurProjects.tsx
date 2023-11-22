@@ -9,7 +9,7 @@ interface IShowed {
   services: IService[];
   btnText: string;
   projects: number[];
-  project: ProjectData[]
+  project: any
 }
 
 export default async function OurProjects({
