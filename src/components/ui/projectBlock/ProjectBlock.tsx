@@ -36,6 +36,7 @@ const ProjectBlock: FC<PropsWithChildren<IProjectBlock>> = ({
             alt={title}
             height={"455"}
             width={430}
+            priority
             loading="eager"
           />
         </div>

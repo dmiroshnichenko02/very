@@ -78,6 +78,7 @@ const ProjectS: FC<PropsWithChildren<IProj>> = ({ project, nextProj }) => {
                       src={project.acf.image_ts}
                       alt={project.acf.title_tas}
                       width={261}
+                      priority
                       height={57}
                       layout="responsive"
                     />
