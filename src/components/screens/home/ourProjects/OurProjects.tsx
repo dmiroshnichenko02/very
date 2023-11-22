@@ -1,5 +1,6 @@
 import { IService } from "@/interfaces/home.interface";
 import Our from "./Our";
+import { ProjectData } from "@/interfaces/project.interface";
 
 interface IShowed {
   projectsShowed: number[];
@@ -8,6 +9,7 @@ interface IShowed {
   services: IService[];
   btnText: string;
   projects: number[];
+  project: ProjectData[]
 }
 
 export default async function OurProjects({
@@ -17,8 +19,8 @@ export default async function OurProjects({
   btnText,
   projectsShowed,
   projects,
+  project
 }: IShowed) {
-  const project = await fetchData();
   return (
     <>
       {project && (
@@ -36,17 +38,35 @@ export default async function OurProjects({
   );
 }
 
-async function fetchData() {
-  const res = await fetch(
-    "https://rcw108.com/wp-json/wp/v2/projects?acf_format=standard",
-    {
-      next: { revalidate: 3600 },
+export async function getStaticProps() {
+  try {
+    const res = await fetch(
+      "https://rcw108.com/wp-json/wp/v2/projects?acf_format=standard",
+      {
+        next: { revalidate: 3600 },
+      }
+    );
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
     }
-  );
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
+    const project = await res.json();
+
+    return {
+      props: {
+        project,
+      },
+      revalidate: 3600, // обновление данных каждый час
+    };
+  } catch (error) {
+    console.error(error);
+
+    return {
+      props: {
+        project: null,
+      },
+      revalidate: 3600,
+    };
   }
-
-  return res.json();
 }
