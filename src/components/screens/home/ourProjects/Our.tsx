@@ -6,15 +6,12 @@ import SliderComponent from "./SliderComponent";
 import styles from "./ourProjects.module.scss";
 import { ProjectData } from "@/interfaces/project.interface";
 
-const Our: FC<PropsWithChildren<any>> = ({ projects }) => {
+const Our: FC<PropsWithChildren<any>> = ({ projects, project, btnText, title, description, services, projectsShowed }) => {
 
-
-  const showedProjects =
-    projects.projectsShowed &&
-    projects.projectsShowed.map((projId: number) => {
-      const showed = projects.find((item: ProjectData) => item.id === projId);
-      return showed;
-    });
+  const showedProjects = projectsShowed.map((projId: number) => {
+    const showed = project.find((item: ProjectData) => item.id === projId);
+    return showed;
+  });
 
   return (
     <>
@@ -61,7 +58,7 @@ const Our: FC<PropsWithChildren<any>> = ({ projects }) => {
           <SliderComponent showedProjects={showedProjects} />
           <div className={styles.btns}>
             <div className={styles.button}>
-              <span>{projects.acf.text_circle_p && projects.acf.text_circle_p}</span>
+              <span>{btnText && btnText}</span>
               <svg
                 version="1.1"
                 className={styles.circleSvg1}
