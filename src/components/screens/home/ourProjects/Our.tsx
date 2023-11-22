@@ -9,10 +9,10 @@ import { ProjectData } from "@/interfaces/project.interface";
 const Our: FC<PropsWithChildren<any>> = ({ projects }) => {
   const { title, description, services, btnText, projectsShowed } = projects;
 
-  const showedProjects = projectsShowed.map((projId: number) => {
+  const showedProjects = projectsShowed && (projectsShowed.map((projId: number) => {
     const showed = projects.find((item: ProjectData) => item.id === projId);
     return showed;
-  });
+  }));
 
   return (
     <>
@@ -20,7 +20,7 @@ const Our: FC<PropsWithChildren<any>> = ({ projects }) => {
         <h2 className={styles.title}>{title}</h2>
         <p className={styles.descr}>{description}</p>
         <div className={styles.wrapper}>
-          { services &&services.map(
+          { services && services.map(
             (
               item: { title: string; img: string },
               index: Key | null | undefined

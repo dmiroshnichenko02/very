@@ -56,7 +56,7 @@ const TeamSection: FC<PropsWithChildren<ITeamSection>> = ({
       </div>
       <div className={styles.sliderWrapper}>
         <Slider {...settings}>
-          {team ? (
+          {team && (
             team.map((item, index) => {
               return (
                 <div key={index} className={styles.teamBlockWrap}>
@@ -77,8 +77,6 @@ const TeamSection: FC<PropsWithChildren<ITeamSection>> = ({
                 </div>
               );
             })
-          ) : (
-            <div>not found</div>
           )}
         </Slider>
       </div>
