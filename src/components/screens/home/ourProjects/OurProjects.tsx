@@ -1,28 +1,5 @@
-import { FC } from "react";
-
-import styles from "./ourProjects.module.scss";
-
-import { ProjectData } from "@/interfaces/project.interface";
 import { IService } from "@/interfaces/home.interface";
-import ServicesBlock from "@/components/ui/servicesBlock/ServicesBlock";
-import ProjectBlock from "@/components/ui/projectBlock/ProjectBlock";
-import SliderComponent from "./SliderComponent";
 import Our from "./Our";
-
-async function fetchData() {
-  const res = await fetch(
-    "https://rcw108.com/wp-json/wp/v2/projects?acf_format=standard",
-    {
-      next: { revalidate: 3600 },
-    }
-  );
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
-  return res.json();
-}
 
 interface IShowed {
   projectsShowed: number[];
@@ -30,22 +7,58 @@ interface IShowed {
   description: string;
   services: IService[];
   btnText: string;
+  projects: number[];
 }
 
-export default async function OurProjects({
+export default function OurProjects({
   title,
   description,
   services,
   btnText,
   projectsShowed,
+  projects,
 }: IShowed) {
-  const projects = await fetchData();
-
-
   return (
-    <>
-      {projects && (<Our projects={projects}/>
-      )}
-    </>
+    <Our
+      title={title}
+      description={description}
+      services={services}
+      btnText={btnText}
+      projectsShowed={projectsShowed}
+      projects={projects}
+    />
   );
+}
+
+export async function getStaticProps() {
+  try {
+    const res = await fetch(
+      "https://rcw108.com/wp-json/wp/v2/projects?acf_format=standard",
+      {
+        next: { revalidate: 3600 },
+      }
+    );
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
+    }
+
+    const projects = await res.json();
+
+    return {
+      props: {
+        projects,
+      },
+      revalidate: 3600, // обновление данных каждый час
+    };
+  } catch (error) {
+    console.error(error);
+
+    return {
+      props: {
+        projects: null,
+      },
+      revalidate: 3600,
+    };
+  }
 }
