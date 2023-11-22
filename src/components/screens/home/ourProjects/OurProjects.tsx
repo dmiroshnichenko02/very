@@ -1,32 +1,59 @@
-import { FC } from "react";
-
-import styles from "./ourProjects.module.scss";
-
-import { ProjectData } from "@/interfaces/project.interface";
-import { IService } from "@/interfaces/home.interface";
-import ServicesBlock from "@/components/ui/servicesBlock/ServicesBlock";
-import ProjectBlock from "@/components/ui/projectBlock/ProjectBlock";
+import { useEffect, useState } from "react";
 import Our from "./Our";
-
-
+import { IService } from "@/interfaces/home.interface";
 
 interface IShowed {
   projectsShowed: number[];
   title: string;
   description: string;
-  services: IService[],
-  btnText: string
-  projects?: ProjectData[]
+  services: IService[];
+  btnText: any;
 }
 
-export default async function OurProjects({title, description, services, btnText, projectsShowed, projects}: IShowed) {
+export default function OurProjects({
+  title,
+  description,
+  services,
+  btnText,
+  projectsShowed,
+}: IShowed) {
+  const [projects, setProjects] = useState<any[]>([]);
 
-  const showedProjects = projectsShowed.map((projId: number) => {
-    const showed = projects && projects.find((item: ProjectData) => item.id === projId);
-    return showed;
-  });
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://rcw108.com/wp-json/wp/v2/projects?acf_format=standard"
+        );
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+
+        const data = await response.json();
+        setProjects(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []); // Empty dependency array ensures useEffect runs only once on component mount
+
+  console.log(projects)
 
   return (
-    <Our title={title} description={description} services={services} btnText={btnText} showedProjects={showedProjects}/>
+    <>
+      {projects.length > 0 && (
+        <Our
+          title={title}
+          description={description}
+          services={services}
+          btnText={btnText}
+          projectsShowed={projectsShowed}
+          projects={projects}
+        />
+      )}
+    </>
   );
 }

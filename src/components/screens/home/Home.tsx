@@ -49,7 +49,6 @@ const Home: FC<PropsWithChildren<HomeData | any>> = ({ acf, projects }) => {
             />
             <OurProjects
               projectsShowed={acf.projects}
-              projects={projects}
               title={acf.title_p}
               description={acf.description_pro}
               services={acf.services}
