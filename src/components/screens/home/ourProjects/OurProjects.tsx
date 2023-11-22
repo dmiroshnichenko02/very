@@ -10,7 +10,7 @@ import Our from "./Our";
 
 async function fetchData() {
   const res = await fetch(
-    "http://rcw108.com/wp-json/wp/v2/projects?acf_format=standard",
+    "https://rcw108.com/wp-json/wp/v2/projects?acf_format=standard",
     {
       next: { revalidate: 3600 },
     }
