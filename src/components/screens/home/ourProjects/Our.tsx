@@ -61,7 +61,7 @@ const Our: FC<PropsWithChildren<any>> = ({ projects }) => {
           <SliderComponent showedProjects={showedProjects} />
           <div className={styles.btns}>
             <div className={styles.button}>
-              <span>{projects.btnText}</span>
+              <span>See All Projects</span>
               <svg
                 version="1.1"
                 className={styles.circleSvg1}
