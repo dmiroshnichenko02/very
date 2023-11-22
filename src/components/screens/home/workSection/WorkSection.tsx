@@ -16,7 +16,7 @@ const WorkSection: FC<PropsWithChildren<IWorkSection>> = ({ content, btnText, ti
       <h2 className={styles.title}>{title}</h2>
       <div className={styles.descr}>{description}</div>
       <div className={styles.wrapper}>
-        {content ? content.map((item, index) => {
+        {content && content.map((item, index) => {
           const h4ContentMatch = item?.text?.match(/<h4>(.*?)<\/h4>/);
           const h4Content = h4ContentMatch ? h4ContentMatch[1] : '';
           const arr = item.text.match(/<li>(.*?)<\/li>/g);
@@ -27,17 +27,17 @@ const WorkSection: FC<PropsWithChildren<IWorkSection>> = ({ content, btnText, ti
             <div key={index + 100} className={styles.contentWrap}>
               <h4 className={styles.contentTitle}>{head}</h4>
               <ul className={styles.list}>
-                {arr ? arr.map((item, index) => {
+                {arr && arr.map((item, index) => {
                   return (
                     <li key={index} className={styles.listItem}>
                       {item.replace(/<li[^>]*>(.*?)<\/li>/, "$1")}
                     </li>
                   );
-                }): <div>not found</div>}
+                })}
               </ul>
             </div>
           );
-        }): <div>not found</div>}
+        })}
       </div>
       <div className={styles.btns}>
         <div className={styles.button}>

@@ -31,7 +31,7 @@ const TeamSection: FC<PropsWithChildren<ITeamSection>> = ({
     <section className={styles.team} id="team">
       <h2 className={styles.title}>{title}</h2>
       <div className={styles.wrapper}>
-        {team ? (
+        {team && (
           team.map((item, index) => {
             return (
               <div key={index} className={styles.teamBlockWrap}>
@@ -52,8 +52,6 @@ const TeamSection: FC<PropsWithChildren<ITeamSection>> = ({
               </div>
             );
           })
-        ) : (
-          <div>not found</div>
         )}
       </div>
       <div className={styles.sliderWrapper}>

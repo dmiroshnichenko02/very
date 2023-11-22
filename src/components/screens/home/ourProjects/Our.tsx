@@ -20,7 +20,7 @@ const Our: FC<PropsWithChildren<any>> = ({ projects }) => {
         <h2 className={styles.title}>{title}</h2>
         <p className={styles.descr}>{description}</p>
         <div className={styles.wrapper}>
-          {services.map(
+          { services &&services.map(
             (
               item: { title: string; img: string },
               index: Key | null | undefined
@@ -32,7 +32,7 @@ const Our: FC<PropsWithChildren<any>> = ({ projects }) => {
           )}
         </div>
         <div className={styles.wrapperProjects}>
-          {showedProjects ? (
+          {showedProjects && (
             showedProjects.map((item: { id: number; acf: { image_ts: string; website: string; }; title: { rendered: string; }; excerpt: { rendered: string; }; }) => {
               return (
                 <ProjectBlock
@@ -45,8 +45,6 @@ const Our: FC<PropsWithChildren<any>> = ({ projects }) => {
                 />
               );
             })
-          ) : (
-            <h4>Load</h4>
           )}
         </div>
         <SliderComponent showedProjects={showedProjects} />

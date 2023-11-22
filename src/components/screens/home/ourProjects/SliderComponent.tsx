@@ -29,7 +29,7 @@ const SliderComponent: FC<PropsWithChildren<ProjectData[] | any>> = ({
   return (
     <div className={styles.sliderWrap} id="sliderWrap">
       <Slider {...settings}>
-        {showedProjects ? (
+        {showedProjects && (
           showedProjects.map((item: { id: number; acf: { image_ts: string; website: string; }; title: { rendered: string; }; excerpt: { rendered: string; }; }) => {
             return (
               <ProjectBlock
@@ -42,8 +42,6 @@ const SliderComponent: FC<PropsWithChildren<ProjectData[] | any>> = ({
               />
             );
           })
-        ) : (
-          <h4>Load</h4>
         )}
       </Slider>
     </div>
