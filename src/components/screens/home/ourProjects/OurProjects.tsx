@@ -16,19 +16,23 @@ export default async function OurProjects({
   services,
   btnText,
   projectsShowed,
-  projects
+  projects,
 }: IShowed) {
   const project = await fetchData();
   return (
-    <Our
-      title={title}
-      description={description}
-      services={services}
-      btnText={btnText}
-      projectsShowed={projectsShowed}
-      projects={projects}
-      project={project}
-    />
+    <>
+      {project && (
+        <Our
+          title={title}
+          description={description}
+          services={services}
+          btnText={btnText}
+          projectsShowed={projectsShowed}
+          projects={projects}
+          project={project}
+        />
+      )}
+    </>
   );
 }
 
