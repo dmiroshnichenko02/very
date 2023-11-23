@@ -70,7 +70,7 @@ export async function generateMetadata({
           meta.yoast_head_json.robots.max_video_preview ===
           "max-video-preview:-1"
             ? -1
-            : 0,
+            : -1,
         "max-image-preview":
           meta.yoast_head_json.robots["max-image-preview"] ===
           "max-image-preview:large"
@@ -82,7 +82,7 @@ export async function generateMetadata({
         "max-snippet":
           meta.yoast_head_json.robots["max-snippet"] === "max-snippet:-1"
             ? -1
-            : 0,
+            : -1,
       },
     },
     alternates: {
