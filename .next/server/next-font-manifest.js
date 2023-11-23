@@ -1,1 +1,1 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/a1398/Desktop/vercel test/src/app/layout\":[\"static/media/634216363f5c73c1-s.p.woff2\",\"static/media/2d141e1a38819612-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/a1398/Desktop/vercel test/src/app/layout\":[\"static/media/e1c529c04de64b40-s.p.woff2\",\"static/media/2d141e1a38819612-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"

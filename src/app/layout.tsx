@@ -4,7 +4,7 @@ import './globals.scss'
 import Header from '@/components/layout/header/Header'
 import Footer from '@/components/layout/footer/Footer'
 
-const mont = Montserrat({ subsets: ['cyrillic'] })
+const mont = Montserrat({ subsets: ['latin'] })
 const space = Space_Grotesk({ subsets: ['latin'] })
 
 
