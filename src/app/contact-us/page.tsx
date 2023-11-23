@@ -30,17 +30,17 @@ export async function generateMetadata({
     (item: { [x: string]: string }) => item["@type"] === "WebSite"
   );
 
-  if (meta) {
+  if (product) {
     return {
       title: meta?.yoast_head_json?.title || "RCW108",
-      description: grapthWeb ? grapthWeb?.description : "RCW108",
+      description: (grapthWeb ? grapthWeb?.description : "RCW108") || "RCW108",
       openGraph: {
         images: meta?.yoast_head_json?.og_image[0].url || "https://rcw108.com/",
         title:
           meta?.yoast_head_json?.og_title || meta.title.rendered || "RCW108",
-        description: grapthWeb ? grapthWeb?.description : "RCW108",
+        description: (grapthWeb ? grapthWeb?.description : "RCW108") || "RCW108",
         url: meta?.yoast_head_json?.og_url || "https://rcw108.com/",
-        siteName: grapthWeb ? grapthWeb?.name : "RCW108",
+        siteName: (grapthWeb ? grapthWeb?.name : "RCW108") || "RCW108",
         locale: meta?.yoast_head_json?.og_locale || "en_US",
         type: meta?.yoast_head_json?.og_type || "website",
       },
