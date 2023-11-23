@@ -24,6 +24,7 @@ const Home: FC<PropsWithChildren<HomeData | any>> = ({ acf, projects }) => {
               title={acf.sub_title_h}
               subTitle={acf.title_h}
               benefits={acf.benefits}
+              second_title={acf.second_title}
             />
             <ServicesSection
               title={acf.title_s}

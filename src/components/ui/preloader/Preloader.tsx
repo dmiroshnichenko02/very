@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { FC, useEffect, useState } from "react";
 import HeaderLogotype from "../headerLogotype/HeaderLogotype";
@@ -9,11 +9,18 @@ const Preloader: FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1500);
+    const preloaderShown = localStorage.getItem('preloaderShown');
 
-    return () => clearTimeout(timer);
+    if (preloaderShown) {
+      setLoading(false);
+    } else {
+      const timer = setTimeout(() => {
+        setLoading(false);
+        localStorage.setItem('preloaderShown', 'true');
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   return (

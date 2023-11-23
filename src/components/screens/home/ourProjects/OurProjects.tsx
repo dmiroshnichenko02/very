@@ -40,7 +40,6 @@ export default function OurProjects({
     fetchData();
   }, []); // Empty dependency array ensures useEffect runs only once on component mount
 
-  console.log(projects)
 
   return (
     <>

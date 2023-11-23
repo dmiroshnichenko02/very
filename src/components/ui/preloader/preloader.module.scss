@@ -11,8 +11,9 @@
   justify-content: center;
   align-items: center;
   z-index: 900;
-  transition: all 1s;
-  animation: preload 1s ease-out 1s forwards;
+//   transition: all 1s;
+  animation: preload 2s forwards;
+  animation-delay: .5s;
 
   svg {
     z-index: 950;
@@ -46,6 +47,6 @@
     top: 0;
   }
   100% {
-    top: -150%;
+    top: -100%;
   }
 }

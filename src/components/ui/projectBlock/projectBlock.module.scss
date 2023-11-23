@@ -14,6 +14,26 @@
   width: 100%;
   min-height: 706px;
   background-color: #e5e7f2;
+  transition: background-color 1s ease;
+  &:hover {
+    background-color: #fff;
+    .content {
+      background-color: #fff;
+      border-top: 2px solid $activeTextColor;
+      .btns {
+        .web {
+          .webText {
+            color: $activeTextColor;
+          }
+        }
+        .detail {
+          &::after {
+            background-color: $activeTextColor;
+          }
+        }
+      }
+    }
+  }
   a {
     color: #fff;
   }
@@ -43,21 +63,26 @@
     }
   }
   .content {
+    transition: border 0.5s ease;
+    transition: background-color 1s ease;
     padding: 40px 30px 30px;
     background-color: #e5e7f2;
+    border-top: 2px solid transparent;
     height: auto;
     .title {
       font-size: 35px;
       line-height: 1.2em;
       font-weight: 700;
       color: $mainTextColor;
+      text-transform: lowercase;
+      text-transform: capitalize !important;
     }
     .descr {
       color: $mainTextColor;
       font-weight: 400;
       font-size: 27px;
       line-height: 30px;
-      margin-bottom: 40px;
+      margin: 20px 0;
     }
     .btns {
       display: flex;
