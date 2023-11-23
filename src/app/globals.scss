@@ -131,6 +131,27 @@ h6 {
     }
   }
 }
+@media (max-width: 578px) {
+  #testimonials .slick-slide {
+    padding: 30px 20px;
+    div div {
+      font-size: 16px;
+    }
+  }
+  #testimonials .slick-track {
+    &::before {
+      top: -20px;
+    }
+    .slick-active {
+      &::before {
+        top: -50px;
+      }
+    }
+  }
+  .slick-list {
+    overflow: visible !important;
+  }
+}
 
 .slick-dots {
   display: flex !important;
@@ -253,9 +274,13 @@ nav svg {
   #testimonials {
     .slick-dots {
       justify-content: center;
+
       li {
         margin: 0 10px;
       }
     }
+  }
+  .slick-dots {
+    margin-left: 0px !important;
   }
 }

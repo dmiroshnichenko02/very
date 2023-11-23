@@ -15,7 +15,7 @@ const HeadSection: FC<PropsWithChildren<iHeadSection>> = ({title, subTitle, bene
     <>
       <section className={styles.headSection}>
         <h1 className={styles.title}>{title}</h1>
-        <h3>{second_title}</h3>
+        <h3 className={styles.secondTitle}>{second_title}</h3>
         <h2 className={styles.subTitle}>{subTitle}</h2>
         <div className={styles.wrapper}>
           {benefits && benefits.map((item, index) => {
