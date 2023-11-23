@@ -36,6 +36,7 @@ export async function generateMetadata({
       description: (grapthWeb ? grapthWeb?.description : "RCW108") || "RCW108",
       openGraph: {
         images: "https://rcw108.com/wp-content/uploads/2022/04/cropped-Group-46-1.png",
+        
         // title:
         //   meta?.yoast_head_json?.og_title || meta.title.rendered || "RCW108",
         // description: (grapthWeb ? grapthWeb?.description : "RCW108") || "RCW108",
