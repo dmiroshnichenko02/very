@@ -30,50 +30,68 @@ export async function generateMetadata({
     (item: { [x: string]: string }) => item["@type"] === "WebSite"
   );
 
-  return {
-    title: meta?.yoast_head_json?.title || "RCW108",
-    description: grapthWeb ? grapthWeb?.description : "RCW108",
-    openGraph: {
-      images: meta?.yoast_head_json?.og_image[0].url || "https://rcw108.com/",
-      title: meta?.yoast_head_json?.og_title || meta.title.rendered || "RCW108",
+  if (meta) {
+    return {
+      title: meta?.yoast_head_json?.title || "RCW108",
       description: grapthWeb ? grapthWeb?.description : "RCW108",
-      url: meta?.yoast_head_json?.og_url || "https://rcw108.com/",
-      siteName: grapthWeb ? grapthWeb?.name : "RCW108",
-      locale: meta?.yoast_head_json?.og_locale || "en_US",
-      type: meta?.yoast_head_json?.og_type || "website",
-    },
-    robots: {
-      index: (meta?.yoast_head_json?.robots?.index === "noindex" ? false : true) || true,
-      follow: (meta?.yoast_head_json?.robots?.follow === "nofollow" ? false : true) || true,
-      googleBot: {
-        index: (meta?.yoast_head_json?.robots?.index === "noindex" ? false : true) || true,
+      openGraph: {
+        images: meta?.yoast_head_json?.og_image[0].url || "https://rcw108.com/",
+        title:
+          meta?.yoast_head_json?.og_title || meta.title.rendered || "RCW108",
+        description: grapthWeb ? grapthWeb?.description : "RCW108",
+        url: meta?.yoast_head_json?.og_url || "https://rcw108.com/",
+        siteName: grapthWeb ? grapthWeb?.name : "RCW108",
+        locale: meta?.yoast_head_json?.og_locale || "en_US",
+        type: meta?.yoast_head_json?.og_type || "website",
+      },
+      robots: {
+        index:
+          (meta?.yoast_head_json?.robots?.index === "noindex" ? false : true) ||
+          true,
         follow:
-          (meta?.yoast_head_json.robots?.follow === "nofollow" ? false : true) || true,
-        "max-video-preview": -1,
-        "max-image-preview":
-          meta?.yoast_head_json?.robots["max-image-preview"] ===
-          "max-image-preview:large"
-            ? "large"
-            : meta?.yoast_head_json?.robots["max-image-preview"] ===
-              "max-image-preview:none"
-            ? "none"
-            : "standard",
-        "max-snippet": -1,
+          (meta?.yoast_head_json?.robots?.follow === "nofollow"
+            ? false
+            : true) || true,
+        googleBot: {
+          index:
+            (meta?.yoast_head_json?.robots?.index === "noindex"
+              ? false
+              : true) || true,
+          follow:
+            (meta?.yoast_head_json.robots?.follow === "nofollow"
+              ? false
+              : true) || true,
+          "max-video-preview": -1,
+          "max-image-preview":
+            meta?.yoast_head_json?.robots["max-image-preview"] ===
+            "max-image-preview:large"
+              ? "large"
+              : meta?.yoast_head_json?.robots["max-image-preview"] ===
+                "max-image-preview:none"
+              ? "none"
+              : "standard",
+          "max-snippet": -1,
+        },
       },
-    },
 
-    icons: {
-      icon: "https://rcw108.com/wp-content/uploads/2022/04/cropped-Group-46-1.png",
-      shortcut:
-        "https://rcw108.com/wp-content/uploads/2022/04/cropped-Group-46-1.png",
-      apple:
-        "https://rcw108.com/wp-content/uploads/2022/04/cropped-Group-46-1.png",
-      other: {
-        rel: "apple-touch-icon-precomposed",
-        url: "https://rcw108.com/wp-content/uploads/2022/04/cropped-Group-46-1.png",
+      icons: {
+        icon: "https://rcw108.com/wp-content/uploads/2022/04/cropped-Group-46-1.png",
+        shortcut:
+          "https://rcw108.com/wp-content/uploads/2022/04/cropped-Group-46-1.png",
+        apple:
+          "https://rcw108.com/wp-content/uploads/2022/04/cropped-Group-46-1.png",
+        other: {
+          rel: "apple-touch-icon-precomposed",
+          url: "https://rcw108.com/wp-content/uploads/2022/04/cropped-Group-46-1.png",
+        },
       },
-    },
-  };
+    };
+  } else {
+    return {
+      title: "RCW108",
+      description: "RCW108",
+    }
+  }
 }
 
 export default async function HomePage({ projects }: any) {
