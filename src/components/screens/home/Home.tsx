@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, PropsWithChildren, useEffect, useState } from "react";
+import { FC, PropsWithChildren } from "react";
 
 import styles from "./home.module.scss";
 import HeadSection from "./headSection/HeadSection";
@@ -10,20 +10,8 @@ import OurProjects from "./ourProjects/OurProjects";
 import WorkSection from "./workSection/WorkSection";
 import TeamSection from "./teamSection/TeamSection";
 import TestimonialsSection from "./testimonialSection/TestimonialsSection";
+import Preloader from "@/components/ui/preloader/Preloader";
 
-const Preloader: FC = () => {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1500);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  return loading ? <div className={styles.preloader}>Loading...</div> : null;
-};
 
 const Home: FC<PropsWithChildren<HomeData | any>> = ({ acf, projects }) => {
   return (
