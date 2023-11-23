@@ -36,43 +36,43 @@ export async function generateMetadata({
       description: (grapthWeb ? grapthWeb?.description : "RCW108") || "RCW108",
       openGraph: {
         images: "https://rcw108.com/wp-content/uploads/2022/04/cropped-Group-46-1.png",
-        title:
-          meta?.yoast_head_json?.og_title || meta.title.rendered || "RCW108",
-        description: (grapthWeb ? grapthWeb?.description : "RCW108") || "RCW108",
-        url: meta?.yoast_head_json?.og_url || "https://rcw108.com/",
-        siteName: (grapthWeb ? grapthWeb?.name : "RCW108") || "RCW108",
-        locale: meta?.yoast_head_json?.og_locale || "en_US",
-        type: meta?.yoast_head_json?.og_type || "website",
+        // title:
+        //   meta?.yoast_head_json?.og_title || meta.title.rendered || "RCW108",
+        // description: (grapthWeb ? grapthWeb?.description : "RCW108") || "RCW108",
+        // url: meta?.yoast_head_json?.og_url || "https://rcw108.com/",
+        // siteName: (grapthWeb ? grapthWeb?.name : "RCW108") || "RCW108",
+        // locale: meta?.yoast_head_json?.og_locale || "en_US",
+        // type: meta?.yoast_head_json?.og_type || "website",
       },
-      robots: {
-        index:
-          (meta?.yoast_head_json?.robots?.index === "noindex" ? false : true) ||
-          true,
-        follow:
-          (meta?.yoast_head_json?.robots?.follow === "nofollow"
-            ? false
-            : true) || true,
-        googleBot: {
-          index:
-            (meta?.yoast_head_json?.robots?.index === "noindex"
-              ? false
-              : true) || true,
-          follow:
-            (meta?.yoast_head_json.robots?.follow === "nofollow"
-              ? false
-              : true) || true,
-          "max-video-preview": -1,
-          "max-image-preview":
-            meta?.yoast_head_json?.robots["max-image-preview"] ===
-            "max-image-preview:large"
-              ? "large"
-              : meta?.yoast_head_json?.robots["max-image-preview"] ===
-                "max-image-preview:none"
-              ? "none"
-              : "standard",
-          "max-snippet": -1,
-        },
-      },
+      // robots: {
+      //   index:
+      //     (meta?.yoast_head_json?.robots?.index === "noindex" ? false : true) ||
+      //     true,
+      //   follow:
+      //     (meta?.yoast_head_json?.robots?.follow === "nofollow"
+      //       ? false
+      //       : true) || true,
+      //   googleBot: {
+      //     index:
+      //       (meta?.yoast_head_json?.robots?.index === "noindex"
+      //         ? false
+      //         : true) || true,
+      //     follow:
+      //       (meta?.yoast_head_json.robots?.follow === "nofollow"
+      //         ? false
+      //         : true) || true,
+      //     "max-video-preview": -1,
+      //     "max-image-preview":
+      //       meta?.yoast_head_json?.robots["max-image-preview"] ===
+      //       "max-image-preview:large"
+      //         ? "large"
+      //         : meta?.yoast_head_json?.robots["max-image-preview"] ===
+      //           "max-image-preview:none"
+      //         ? "none"
+      //         : "standard",
+      //     "max-snippet": -1,
+      //   },
+      // },
 
       icons: {
         icon: "https://rcw108.com/wp-content/uploads/2022/04/cropped-Group-46-1.png",
