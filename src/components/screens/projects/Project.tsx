@@ -19,8 +19,9 @@ const Project: FC<PropsWithChildren<ProjectData[] | any>> = (projects) => {
   };
 
   const renderProjects = (projects: ProjectData[]) => {
-    return projects.map((item: ProjectData) => (
+    return projects.map((item: ProjectData, index: number) => (
       <ProjectBlock
+        index={index}
         key={item.id}
         id={item.id}
         image={item.acf.image_ts}
