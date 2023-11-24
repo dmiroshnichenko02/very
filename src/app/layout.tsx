@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
-import { Space_Grotesk } from 'next/font/google'
+import { Space_Grotesk, Montserrat } from 'next/font/google'
 import './globals.scss'
 import Header from '@/components/layout/header/Header'
 import Footer from '@/components/layout/footer/Footer'
 
 const space = Space_Grotesk({ subsets: ['latin'] })
+const mont = Montserrat({ subsets: ['latin', 'cyrillic', 'cyrillic-ext', 'vietnamese', 'latin-ext'], display: 'swap' })
 
 
 export const metadata: Metadata = {
@@ -19,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${space.className}`}>
+      <body className={`${mont.className} ${space.className}`}>
         <Header/>
         {children}
         <Footer/>
