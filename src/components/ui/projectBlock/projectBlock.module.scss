@@ -2,7 +2,7 @@
 
 .projectWrap {
   width: 100%;
-  padding: 0 50px;
+  padding: 0 25px;
   overflow: hidden;
 }
 
@@ -15,20 +15,25 @@
   width: 100%;
   min-height: 706px;
   background-color: #e5e7f2;
-  transition: background-color 1s ease;
+  transition: background-color .5s ease;
   &:hover {
     background-color: #fff;
     .content {
+      transition: all .5s ease;
       background-color: #fff;
       border-top: 2px solid $activeTextColor;
       .btns {
+        transition: all .5s ease;
         .web {
+          transition: all .5s ease;
           .webText {
+            transition: all .5s ease;
             color: $activeTextColor;
           }
         }
         .detail {
           &::after {
+            transition: all .5s ease;
             background-color: $activeTextColor;
           }
         }
@@ -65,7 +70,7 @@
   }
   .content {
     transition: border 0.5s ease;
-    transition: background-color 1s ease;
+    transition: background-color .5s ease;
     padding: 40px 30px 30px;
     background-color: #e5e7f2;
     border-top: 2px solid transparent;
@@ -156,6 +161,7 @@
         }
       }
       .web {
+        transition: all .5s ease;
         display: -webkit-inline-box;
         display: -ms-inline-flexbox;
         display: inline-flex;
@@ -207,6 +213,7 @@
           transform: translateX(-5px);
         }
         .webText {
+          transition: all .5s ease;
           font-weight: 700;
           font-size: 24px;
           line-height: 23px;

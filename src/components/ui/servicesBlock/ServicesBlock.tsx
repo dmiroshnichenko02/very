@@ -59,7 +59,7 @@ const ServicesBlock: FC<PropsWithChildren<IServicesBlock>> = ({
   return (
     <div className={styles.services} ref={serviceRef}>
       <div className={styles.img} >
-        <Image src={img} alt={title} width={"60"} height={"60"} />
+        <Image src={img} alt={title} width={"60"} height={"60"} style={{maxWidth: "100%", height: "100%"}}/>
       </div>
       <h3 className={styles.title}>{title}</h3>
     </div>

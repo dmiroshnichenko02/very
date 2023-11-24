@@ -37,7 +37,6 @@ const TeamSection: FC<PropsWithChildren<ITeamSection>> = ({
   const teamBlockRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    console.log(titleRef.current);
     if (titleRef.current) {
       gsap.from(titleRef.current, {
         opacity: 0,
@@ -94,6 +93,7 @@ const TeamSection: FC<PropsWithChildren<ITeamSection>> = ({
                         width={"400"}
                         height={"390"}
                         priority
+                        style={{maxWidth: "100%", height: "100%"}}
                       />
                     </div>
                     <div className={styles.info}>

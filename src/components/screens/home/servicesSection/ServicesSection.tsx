@@ -165,6 +165,7 @@ const ServicesSection: FC<PropsWithChildren<IServicesSection>> = ({
             width={"400"}
             height={"250"}
             priority
+            style={{maxWidth: "100%", height: "100%"}}
           />
           <Image
             src={reactImageSecond}
@@ -173,6 +174,7 @@ const ServicesSection: FC<PropsWithChildren<IServicesSection>> = ({
             height={63}
             priority
             className={styles.heart}
+            style={{maxWidth: "100%", height: "100%"}}
           />
           <Image
             src={reactImageThird}
@@ -180,6 +182,7 @@ const ServicesSection: FC<PropsWithChildren<IServicesSection>> = ({
             width={"370"}
             height={"370"}
             priority
+            style={{maxWidth: "100%", height: "100%"}}
           />
         </div>
         <div className={styles.btns}>

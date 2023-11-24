@@ -78,6 +78,7 @@ const ProjectBlock: FC<PropsWithChildren<IProjectBlock>> = ({
             width={430}
             priority
             loading="eager"
+            style={{maxWidth: "100%", height: "100%"}}
           />
         </div>
         <div className={styles.content}>
