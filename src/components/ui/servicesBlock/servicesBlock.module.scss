@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   margin-bottom: 60px;
   .img {
     height: 90px;
@@ -22,7 +23,6 @@
   }
   .title {
     color: $activeTextColor;
-    font-family: "Space Grotesk";
     font-size: 22px;
     font-style: normal;
     font-weight: 500;
