@@ -4,8 +4,8 @@ import './globals.scss'
 import Header from '@/components/layout/header/Header'
 import Footer from '@/components/layout/footer/Footer'
 
-const space = Space_Grotesk({ subsets: ['latin'] })
-const mont = Montserrat({ subsets: ['latin', 'cyrillic', 'cyrillic-ext', 'vietnamese', 'latin-ext'], display: 'swap' })
+const space = Space_Grotesk({ subsets: ['latin'], variable: '--font-space' })
+const mont = Montserrat({ subsets: ['latin', 'cyrillic', 'cyrillic-ext', 'vietnamese', 'latin-ext'], display: 'swap', variable: '--font-mont' })
 
 
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${mont.className} ${space.className}`}>
+      <body className={`${mont.variable} ${space.variable}`}>
         <Header/>
         {children}
         <Footer/>
