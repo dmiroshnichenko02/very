@@ -19,7 +19,7 @@ interface IProjectBlock {
   title: string;
   description: string;
   web: string;
-  index: number
+  index: number;
 }
 
 const ProjectBlock: FC<PropsWithChildren<IProjectBlock>> = ({

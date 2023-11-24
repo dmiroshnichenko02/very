@@ -4,7 +4,7 @@ import { ProjectData } from "@/interfaces/project.interface";
 import { FC, Key, PropsWithChildren } from "react";
 import Slider from "react-slick";
 
-import styles from './ourProjects.module.scss';
+import styles from "./ourProjects.module.scss";
 
 interface IShowed {
   projectsShowed: number[];
@@ -15,7 +15,7 @@ interface IShowed {
 }
 
 const SliderComponent: FC<PropsWithChildren<ProjectData[] | any>> = ({
-    showedProjects
+  showedProjects,
 }) => {
   const settings = {
     dots: true,
@@ -29,20 +29,27 @@ const SliderComponent: FC<PropsWithChildren<ProjectData[] | any>> = ({
   return (
     <div className={styles.sliderWrap} id="sliderWrap">
       <Slider {...settings}>
-        {showedProjects && (
-          showedProjects.map((item: { id: number; acf: { image_ts: string; website: string; }; title: { rendered: string; }; excerpt: { rendered: string; }; }) => {
-            return (
-              <ProjectBlock
-                id={item.id}
-                key={item.id}
-                image={item.acf.image_ts}
-                title={item.title.rendered}
-                description={item.excerpt.rendered}
-                web={item.acf.website}
-              />
-            );
-          })
-        )}
+        {showedProjects &&
+          showedProjects.map(
+            (item: {
+              id: number;
+              acf: { image_ts: string; website: string };
+              title: { rendered: string };
+              excerpt: { rendered: string };
+            }, index: number) => {
+              return (
+                <ProjectBlock
+                  index={index}
+                  id={item.id}
+                  key={item.id}
+                  image={item.acf.image_ts}
+                  title={item.title.rendered}
+                  description={item.excerpt.rendered}
+                  web={item.acf.website}
+                />
+              );
+            }
+          )}
       </Slider>
     </div>
   );
