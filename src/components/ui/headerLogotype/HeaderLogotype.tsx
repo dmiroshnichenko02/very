@@ -1,10 +1,11 @@
 import { FC } from "react";
+import Link from "next/link";
 
 import styles from "./headerLogotype.module.scss";
 
 const HeaderLogotype: FC = () => {
   return (
-    <>
+    <Link href="/">
       <svg
         width="123"
         height="71"
@@ -30,7 +31,7 @@ const HeaderLogotype: FC = () => {
           fill="black"
         />
       </svg>
-    </>
+    </Link>
   );
 };
 
