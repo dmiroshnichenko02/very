@@ -1,4 +1,4 @@
-import { Dispatch, FC, PropsWithChildren, SetStateAction, useState } from "react";
+import { Dispatch, FC, PropsWithChildren, SetStateAction, useEffect, useState } from "react";
 
 import styles from './menuBurger.module.scss';
 
@@ -10,6 +10,10 @@ interface IMenuBurger {
 const MenuBurger: FC<PropsWithChildren<IMenuBurger>> = ({opens, setOpen}) => {
 
     const [active, setActive] = useState(false)
+
+    useEffect(() => {
+      setActive(opens)
+    }, [opens])
 
   return (
     <>

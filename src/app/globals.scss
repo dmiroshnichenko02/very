@@ -144,13 +144,15 @@ a {
       top: -20px;
     }
     .slick-active {
+      padding-top: 60px;
       &::before {
-        top: -50px;
+        top: -20px;
+        left: -15px;
       }
     }
   }
   .slick-list {
-    overflow: visible !important;
+    overflow: hidden !important;
   }
 }
 
